@@ -19,8 +19,11 @@ namespace Client.NetCore.Controllers
 
         public async Task<IActionResult> Index()
         {
+           // string countryCode = 
+           // string documentCode = 
+           
             var authorizationResponse = await _service.GetRequestID();
-            var widgetResponse = await _service.GetWidget(authorizationResponse.request_id, "ARM", "I");
+            var widgetResponse = await _service.GetWidget(authorizationResponse.request_id, countryCode, documentCode);
 
             ViewBag.Key = widgetResponse.key;
 
